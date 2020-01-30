@@ -26,7 +26,7 @@
 {extends file="helpers/form/form.tpl"}
 {block name="field"}
 	{if $input.type == 'desc'}
-		<div class="alert alert-info">{$input.text}</div>
+		<div class="alert alert-info">"{$input.text}"</div>
 	{/if}
 	{$smarty.block.parent}
 {/block}
