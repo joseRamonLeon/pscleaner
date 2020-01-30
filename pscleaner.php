@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * 2007-2016 PrestaShop
  *
  * NOTICE OF LICENSE
@@ -380,7 +380,7 @@ class PSCleaner extends Module
 
     protected static function clearAllCaches()
     {
-        $index = file_exists(_PS_TMP_IMG_DIR_.'index.php') ? file_get_contents(_PS_TMP_IMG_DIR_.'index.php') : '';
+        $index = file_exists(_PS_TMP_IMG_DIR_.'index.php') ? Tools::file_get_contents(_PS_TMP_IMG_DIR_.'index.php') : '';
         Tools::deleteDirectory(_PS_TMP_IMG_DIR_, false);
         file_put_contents(_PS_TMP_IMG_DIR_.'index.php', $index);
         Context::getContext()->smarty->clearAllCache();
