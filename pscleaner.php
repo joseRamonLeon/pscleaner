@@ -1,6 +1,6 @@
 <?php
 /**
- * 2007-2016 PrestaShop
+ * 2019-2020 PrestaShop
  *
  * NOTICE OF LICENSE
  *
@@ -19,9 +19,9 @@
  * needs please refer to http://www.prestashop.com for more information.
  *
  *  @author PrestaShop SA <contact@prestashop.com>
- *  @copyright  2007-2016 PrestaShop SA
- *  @version  Release: $Revision: 7060 $
+ *  @copyright  2019-2020 PrestaShop SA
  *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ *  @version  Release: $Revision: 7061 $
  *  International Registered Trademark & Property of PrestaShop SA
  */
 
@@ -41,15 +41,13 @@ class PSCleaner extends Module
         if (version_compare(_PS_VERSION_, '1.5.0.0 ', '>=')) {
             $this->multishop_context = Shop::CONTEXT_ALL;
         }
-
         $this->bootstrap = true;
         parent::__construct();
 
         $this->displayName = $this->trans('PrestaShop Cleaner', array(), 'Modules.Pscleaner.Admin');
         $this->description = $this->trans('Check and fix functional integrity constraints and remove default data', array(), 'Modules.Pscleaner.Admin');
-        $this->secure_key = Tools::encrypt($this->name);
-	    
-	$this->ps_versions_compliancy = array('min' => '1.7.1.0', 'max' => _PS_VERSION_);
+        $this->secure_key = Tools::encrypt($this->name);   
+        $this->ps_versions_compliancy = array('min' => '1.7.1.0', 'max' => _PS_VERSION_);
     }
 
     protected function getMultiShopValues($key)
